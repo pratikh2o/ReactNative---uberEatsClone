@@ -1,53 +1,70 @@
-import React from 'react';
-import {View, Text, Image} from 'react-native';
-import About from '../components/restaurantDetail/About';
+import React from "react";
+import About from "../components/restaurantDetail/About";
+import { View, ScrollView } from "react-native";
+import MenuItem from "../components/restaurantDetail/MenuItem";
 
-const image =
-  'https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2022/04/12/1329/MUMGH-P0765-Inner-Courtyard-Hotel-Exterior-Evening.jpg/MUMGH-P0765-Inner-Courtyard-Hotel-Exterior-Evening.16x9.jpg';
-
-const name = 'Hyat Hotel';
-
-const description = 'Thai • Comfort Food • $5 • 🎫 • 4 ⭐ (2013+)';
+const data = [
+  {
+    name: "Tandoori Kab",
+    description: "Fresh leg peices of chiken bite it like wild tiger bithes!!",
+    price: "$19.30",
+    image:
+      "https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000",
+  },
+  {
+    name: "Tandoori Kebab",
+    description: "Fresh leg peices of chiken bite it like wild tiger bithes!!",
+    price: "$19.30",
+    image:
+      "https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000",
+  },
+  {
+    name: "Tandoori Kebab",
+    description: "Fresh leg peices of chiken bite it like wild tiger bithes!!",
+    price: "$19.30",
+    image:
+      "https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000",
+  },
+  {
+    name: "Tandoori Kebab",
+    description: "Fresh leg peices of chiken bite it like wild tiger bithes!!",
+    price: "$19.30",
+    image:
+      "https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000",
+  },
+  {
+    name: "Tandoori Kebab",
+    description: "Fresh leg peices of chiken bite it like wild tiger bithes!!",
+    price: "$19.30",
+    image:
+      "https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000",
+  },
+  {
+    name: "Tandoori Kebab",
+    description: "Fresh leg peices of chiken bite it like wild tiger bithes!!",
+    price: "$19.30",
+    image:
+      "https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000",
+  },
+  {
+    name: "Tandoori Kb",
+    description: "Fresh leg peices of chiken bite it like wild tiger bithes!!",
+    price: "$19.30",
+    image:
+      "https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000",
+  },
+];
 
 const RestaurantDetail = () => {
   return (
-    <View>
-      <RestaurantImage image={image} />
-      <RestaurantTitle title={name} />
-      <RestaurantDes des={description} />
+    <View style={{ height: "100%" }}>
+      <About />
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        {data.map((food, index) => {
+          return <MenuItem food={food} key={index} />;
+        })}
+      </ScrollView>
     </View>
-  );
-};
-
-const RestaurantImage = ({image}) => {
-  return <Image source={{uri: image}} style={{width: '100%', height: 150}} />;
-};
-
-const RestaurantTitle = ({title}) => {
-  return (
-    <Text
-      style={{
-        fontSize: 29,
-        fontWeight: '600',
-        marginTop: 10,
-        marginHorizontal: 15,
-      }}>
-      {title}
-    </Text>
-  );
-};
-
-const RestaurantDes = ({des}) => {
-  return (
-    <Text
-      style={{
-        fontSize: 15.5,
-        fontWeight: '400',
-        marginTop: 10,
-        marginHorizontal: 15,
-      }}>
-      {des}
-    </Text>
   );
 };
 
