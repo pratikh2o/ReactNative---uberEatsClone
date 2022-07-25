@@ -1,41 +1,41 @@
-import React from 'react';
-import {View, Text} from 'react-native';
-import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-const SearchBar = ({cityHandle}) => {
+import React from "react";
+import { View, Text } from "react-native";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import Ionicons from "react-native-vector-icons/Ionicons";
+const SearchBar = ({ cityHandle }) => {
   return (
-    <View style={{marginTop: 15, flexDirection: 'row'}}>
+    <View style={{ marginTop: 15, flexDirection: "row" }}>
       <GooglePlacesAutocomplete
-      query={{key:"AIzaSyCKsZN5gO4JADbIg7m9Mh4_Gfz76wTidgo"}}
-      onPress={(data) => {
-        console.log(data.description)
-        const city = data.description.split(",")[0]
-        cityHandle(city)
-      }}
+        query={{ key: "" }}
+        onPress={(data) => {
+          console.log(data.description);
+          const city = data.description.split(",")[0];
+          cityHandle(city);
+        }}
         placeholder="Search"
         styles={{
           textInput: {
-            backgroundColor: '#eee',
+            backgroundColor: "#eee",
             borderRadius: 28,
-            fontWeight: '200',
+            fontWeight: "200",
             marginTop: 7,
           },
           textInputContainer: {
-            backgroundColor: '#eee',
+            backgroundColor: "#eee",
             borderRadius: 50,
-            flexDirection: 'row',
-            alignItems: 'center',
+            flexDirection: "row",
+            alignItems: "center",
             marginRight: 10,
           },
         }}
         renderLeftButton={() => {
           return (
-            <View style={{marginLeft: 10}}>
+            <View style={{ marginLeft: 10 }}>
               <Ionicons
                 name="location-sharp"
                 size={24}
-                style={{color: 'black'}}
+                style={{ color: "black" }}
               />
             </View>
           );
@@ -44,17 +44,18 @@ const SearchBar = ({cityHandle}) => {
           return (
             <View
               style={{
-                flexDirection: 'row',
+                flexDirection: "row",
                 marginRight: 8,
-                backgroundColor: 'white',
+                backgroundColor: "white",
                 padding: 9,
                 borderRadius: 30,
-                alignItems: 'center',
-              }}>
+                alignItems: "center",
+              }}
+            >
               <AntDesign
                 name="clockcircle"
                 size={11}
-                style={{marginRight: 5, color: 'black'}}
+                style={{ marginRight: 5, color: "black" }}
               />
               <Text>Search</Text>
             </View>
