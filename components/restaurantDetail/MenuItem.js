@@ -26,9 +26,11 @@ const FoodDetail = ({ name, desp, price }) => {
         justifyContent: "space-evenly",
       }}
     >
-      <Text style={{ fontWeight: "600", fontSize: 19 }}>{name}</Text>
-      <Text>{desp}</Text>
-      <Text>{price}</Text>
+      <Text style={{ fontWeight: "600", fontSize: 19, color: "black" }}>
+        {name}
+      </Text>
+      <Text style={{ color: "black" }}>{desp}</Text>
+      <Text style={{ color: "black" }}>{price}</Text>
     </View>
   );
 };

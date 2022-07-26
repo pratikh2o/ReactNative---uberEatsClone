@@ -1,13 +1,12 @@
 import React from "react";
-import { View } from "react-native";
-import Home from "./screens/Home";
-import RestaurantDetail from "./screens/RestaurantDetail";
+import AppNavigation from "./navigation";
+import { NavigationContainer } from "@react-navigation/native";
 
 const App = () => {
   return (
-    <View>
-      <RestaurantDetail />
-    </View>
+    <NavigationContainer>
+      <AppNavigation />
+    </NavigationContainer>
   );
 };
 
