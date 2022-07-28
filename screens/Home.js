@@ -29,7 +29,6 @@ const Home = ({ navigation }) => {
         let data = res.businesses.filter((bus) => {
           return bus.transactions.includes(activeTab.toLowerCase());
         });
-        console.log("ojefoinouhfdou");
         setRestaurantData(data);
       });
   };
@@ -46,9 +45,16 @@ const Home = ({ navigation }) => {
       <ScrollView>
         <Categories />
         {RestaurantData.map((val, index) => {
-          return <RestaurantItem restData={val} key={index} />;
+          return (
+            <RestaurantItem
+              restData={val}
+              key={index}
+              navigation={navigation}
+            />
+          );
         })}
       </ScrollView>
+
       <BottomList />
     </View>
   );

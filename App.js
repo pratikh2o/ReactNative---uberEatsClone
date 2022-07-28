@@ -1,13 +1,8 @@
 import React from "react";
 import AppNavigation from "./navigation";
-import { NavigationContainer } from "@react-navigation/native";
 
 const App = () => {
-  return (
-    <NavigationContainer>
-      <AppNavigation />
-    </NavigationContainer>
-  );
+  return <AppNavigation />;
 };
 
 export default App;

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import About from "../components/restaurantDetail/About";
 import { View, ScrollView } from "react-native";
 import MenuItem from "../components/restaurantDetail/MenuItem";
+import ViewCart from "../components/restaurantDetail/ViewCart";
 
 const data = [
   {
@@ -55,15 +56,16 @@ const data = [
   },
 ];
 
-const RestaurantDetail = () => {
+const RestaurantDetail = ({ route, navigation }) => {
   return (
     <View style={{ height: "100%" }}>
-      <About />
+      <About resData={route} />
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {data.map((food, index) => {
           return <MenuItem food={food} key={index} />;
         })}
       </ScrollView>
+      <ViewCart navigation={navigation} route={route} />
     </View>
   );
 };

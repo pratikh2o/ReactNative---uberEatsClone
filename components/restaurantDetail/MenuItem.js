@@ -1,5 +1,6 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 const MenuItem = ({ food }) => {
   return (
@@ -12,6 +13,10 @@ const MenuItem = ({ food }) => {
         borderBottomWidth: 2,
       }}
     >
+      <BouncyCheckbox
+        iconStyle={{ borderColor: "lightgrey", borderRadius: 0 }}
+        fillColor="green"
+      />
       <FoodDetail name={food.name} desp={food.description} price={food.price} />
       <FoodImage image={food.image} />
     </View>
